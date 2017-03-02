@@ -15,7 +15,9 @@ namespace ltracker.Helpers
         static MapperHelper()
         {
             var config = new MapperConfiguration(x=> {
-                x.CreateMap<Individual, IndividualViewModel>().ReverseMap()
+                x.CreateMap<Individual, IndividualViewModel>().ReverseMap();
+                x.CreateMap<Individual, NewIndividualViewModel>().ReverseMap();
+                x.CreateMap<Individual, EditIndividualViewModel>().ReverseMap();
             });
             mapper = config.CreateMapper();
         }

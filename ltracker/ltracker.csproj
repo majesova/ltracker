@@ -185,7 +185,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndividualController.cs" />
     <Compile Include="Helpers\MapperHelper.cs" />
-    <Compile Include="Models\IndividualViewModel.cs" />
+    <Compile Include="Models\IndividualViewModels.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -253,6 +253,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Individual\Create.cshtml" />
     <Content Include="Views\Individual\Index.cshtml" />
+    <Content Include="Views\Individual\Edit.cshtml" />
+    <Content Include="Views\Individual\Delete.cshtml" />
+    <Content Include="Views\Individual\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
