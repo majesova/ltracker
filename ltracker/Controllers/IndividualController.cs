@@ -40,7 +40,7 @@ namespace ltracker.Controllers
         {
             var repository = new IndividualRepository(context);
             var individual = repository.Find(id);
-            var model = MapperHelper.Map<NewIndividualViewModel>(individual);
+            var model = MapperHelper.Map<IndividualViewModel>(individual);
             return View(model);
         }
 
@@ -131,13 +131,13 @@ namespace ltracker.Controllers
         {
             var repositorio = new IndividualRepository(context);
             var individual = repositorio.Find(id);
-            var model = MapperHelper.Map<NewIndividualViewModel>(individual);
+            var model = MapperHelper.Map<IndividualViewModel>(individual);
             return View(model);
         }
 
         // POST: Individual/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, NewIndividualViewModel model)
+        public ActionResult Delete(int id, IndividualViewModel model)
         {
             try
             {
