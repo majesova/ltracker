@@ -18,6 +18,9 @@ namespace ltracker.Helpers
                 x.CreateMap<Individual, IndividualViewModel>().ReverseMap();
                 x.CreateMap<Individual, NewIndividualViewModel>().ReverseMap();
                 x.CreateMap<Individual, EditIndividualViewModel>().ReverseMap();
+                x.CreateMap<Course, CourseViewModel>().ReverseMap();
+                x.CreateMap<Topic, TopicViewModel>().ReverseMap();
+                x.CreateMap<Course, DetailsCourseViewModel>();
             });
             mapper = config.CreateMapper();
         }

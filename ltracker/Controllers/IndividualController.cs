@@ -11,15 +11,9 @@ using ltracker.Helpers;
 
 namespace ltracker.Controllers
 {
-    public class IndividualController : Controller
+    public class IndividualController : BaseController
     {
-        LearningContext context = new LearningContext();
-
-        protected override void Dispose(bool disposing)
-        {
-            context.Dispose();
-            base.Dispose(disposing);
-        }
+        
 
         // GET: Individual
         /// <summary>
@@ -106,7 +100,7 @@ namespace ltracker.Controllers
                     if (existeEmail)
                     {
                         ModelState.AddModelError("Email", "Email ocupado");
-                        return View();
+                        return View(model);
                     }
                 }
                 else {
