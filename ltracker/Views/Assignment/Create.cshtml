@@ -59,7 +59,6 @@
         //module pattern
         var newAssignment = (function () {
             //privado
-
             //este método si es accesible
             var start = function () {
                 //Se puede poner en el layout
@@ -69,11 +68,11 @@
                 };
                 $('.datepicker').datepicker({
                     format: 'dd/mm/yyyy',
-                    language: 'es-MX'
+                    language: 'es-MX',
+                    autoclose: true
                 });
-
             }
-
+            
             //Este método no está accesible
             var doSave = function(){
             
@@ -81,7 +80,7 @@
             //público
             return {
                 start:start
-            }
+            };
         })();
 
         $(function () {

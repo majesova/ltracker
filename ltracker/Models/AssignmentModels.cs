@@ -45,14 +45,18 @@ namespace ltracker.Models
         [DisplayName("Completado")]
         public bool isCompleted { get; set; }
         [DisplayName("Inicio")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? StartDate { get; set; }
         [DisplayName("Fin")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? FinishDate { get; set; }
         [DisplayName("Horas totales")]
         public decimal? TotalHours { get; set; }
 
         //relaciones no editables
+        public int CourseId { get; set; }
         public CourseViewModel Course { get; set; }
+        public int IndividualId { get; set; }
         public IndividualViewModel Invidivual { get; set; }
     }
 

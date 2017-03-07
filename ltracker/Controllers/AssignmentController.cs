@@ -75,6 +75,32 @@ namespace ltracker.Controllers
         
         }
 
+        [HttpPost]
+        public ActionResult Edit(int id, EditAssignmentViewModel model)
+        {
+            var repository = new AssignedCourseRepository(context);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var assignmentUpd = MapperHelper.Map<AssignedCourse>(model);
+                    repository.Update(assignmentUpd);
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else {
+                    return View(model);
+                }
+
+            }
+            catch (Exception ex) {
+                ViewBag.ErrorMessage = ex.Message;
+                return View(model);
+            }
+
+            return View();
+        }
+
         public SelectList PopulateInviduals(object selectedItem = null) {
             var repository = new IndividualRepository(context);
             var individuals = repository.Query(null, "Name").ToList();
