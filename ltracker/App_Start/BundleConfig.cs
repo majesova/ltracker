@@ -21,6 +21,8 @@ namespace ltracker
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/jquery.globalize/globalize.js",
+                      "~/Scripts/jquery.globalize/cultures/globalize.culture.es-MX.js",
                       "~/Scripts/bootstrap-datepicker.js",
                       "~/Scripts/locales/bootstrap-datepicker.es.min.js",
                       "~/Scripts/respond.js"));

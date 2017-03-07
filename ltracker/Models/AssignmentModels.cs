@@ -12,6 +12,7 @@ namespace ltracker.Models
         {
             [Required]
             [DisplayName("Fecha de asignación")]
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
             public DateTime? AssignmentDate { get; set; }
             public SelectList IndividualList { get; set; }
             public SelectList CoursesList { get; set; }

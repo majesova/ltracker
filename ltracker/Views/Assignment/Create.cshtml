@@ -62,9 +62,16 @@
 
             //este método si es accesible
             var start = function () {
-               
+                //Se puede poner en el layout
+                Globalize.culture("es-MX"); //Not sure that it's your locale, maby you need other
+                $.validator.methods.date = function (value, element) {
+                    return this.optional(element) || Globalize.parseDate(value);
+                };
+                $('.datepicker').datepicker({
+                    format: 'dd/mm/yyyy',
+                    language: 'es-MX'
+                });
 
-                $(".datepicker").datepicker();
             }
 
             //Este método no está accesible
@@ -78,8 +85,9 @@
         })();
 
         $(function () {
-            newAssignment.start();
-        })
+            var module = newAssignment;
+            module.start();
+        });
 
     </script>
 }
