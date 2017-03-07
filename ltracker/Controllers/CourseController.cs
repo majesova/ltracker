@@ -130,22 +130,32 @@ namespace ltracker.Controllers
         // GET: Course/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var repository = new CourseRepository(context);
+            var course = repository.Find(id);
+            var model = MapperHelper.Map<CourseViewModel>(course);
+            return View(model);
         }
 
         // POST: Course/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, CourseViewModel model)
         {
             try
             {
+                if (id != model.Id) {
+                    return new HttpNotFoundResult();
+                }
                 // TODO: Add delete logic here
-
+                var repository = new CourseRepository(context);
+                var course = repository.Find(model.Id);
+                repository.Delete(course);
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ViewBag.ErrorMessage = ex.Message;
+                return View(model);
             }
         }
     }

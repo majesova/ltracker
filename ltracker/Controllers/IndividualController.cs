@@ -29,6 +29,7 @@ namespace ltracker.Controllers
             return View(models);
         }
 
+        
         // GET: Individual/Details/5
         public ActionResult Details(int id)
         {
@@ -39,6 +40,7 @@ namespace ltracker.Controllers
         }
 
         // GET: Individual/Create
+        
         public ActionResult Create()
         {
             return View();

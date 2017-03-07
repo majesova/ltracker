@@ -19,13 +19,17 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Learning Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Personas", "Index", "Individual")</li>
+                    <li>@Html.ActionLink("Asignaciones", "Index", "Assignment")</li>
+                    <li>@Html.ActionLink("Cursos", "Index", "Course")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                   
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

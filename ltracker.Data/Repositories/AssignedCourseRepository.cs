@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace ltracker.Data.Repositories
 {
-
     public class AssignedCourseRepository : BaseRepository<AssignedCourse>
     {
         public AssignedCourseRepository(LearningContext context) : base(context)
@@ -15,5 +14,4 @@ namespace ltracker.Data.Repositories
 
         }
     }
-
 }
